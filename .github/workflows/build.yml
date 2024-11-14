@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - feature01
   pull_request:
     types: [opened, synchronize, reopened]
 
