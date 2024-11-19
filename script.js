@@ -3,6 +3,7 @@
  *
  * Manages the data of the application.
  */
+// FIXME here
 class Model {
   constructor() {
     this.todos = JSON.parse(localStorage.getItem('todos')) || []
@@ -31,7 +32,7 @@ class Model {
 
   editTodo(id, updatedText) {
     this.todos = this.todos.map(todo =>
-      todo.id === id ? { id: todo.id, text: updatedText, complete: todo.complete } : todo
+      todo.id == id ? { id: todo.id, text: updatedText, complete: todo.complete } : todo
     )
 
     this._commit(this.todos)
@@ -45,7 +46,7 @@ class Model {
 
   toggleTodo(id) {
     this.todos = this.todos.map(todo =>
-      todo.id === id ? { id: todo.id, text: todo.text, complete: !todo.complete } : todo
+      todo.id == id ? { id: todo.id, text: todo.text, complete: !todo.complete } : todo
     )
 
     this._commit(this.todos)
